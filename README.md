@@ -16,7 +16,7 @@ mysql> create table Movies (
     //Table before
     mysql> describe Movies
     -> ;
-    
+    ```
 +------------+--------------+------+-----+---------+----------------+
 | Field      | Type         | Null | Key | Default | Extra          |
 +------------+--------------+------+-----+---------+----------------+
@@ -60,7 +60,7 @@ Query OK, 1 row affected (0.01 sec)
 
 mysql> select * from Movies
 ```
-    -> ;
+    
 +----+--------------------+---------+-------------+------------+--------+
 | ID | Title              | Runtime | Genre       | IMDB_Score | Rating |
 +----+--------------------+---------+-------------+------------+--------+
