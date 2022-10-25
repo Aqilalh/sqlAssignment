@@ -16,7 +16,7 @@ mysql> create table Movies (
     //Table before
     mysql> describe Movies
     -> ;
-    
+    ```
 +------------+--------------+------+-----+---------+----------------+
 | Field      | Type         | Null | Key | Default | Extra          |
 +------------+--------------+------+-----+---------+----------------+
@@ -27,7 +27,7 @@ mysql> create table Movies (
 | IMDB_Score | decimal(6,1) | NO   |     | 99999.9 |                |
 | Rating     | varchar(100) | YES  |     | NULL    |                |
 +------------+--------------+------+-----+---------+----------------+
-***
+```
 
 // Adding data
 mysql> INSERT INTO Movies VALUES (1, 'Howard the Duck', 110, 'Sci-Fi', 4.6, 'PG'),
@@ -38,7 +38,7 @@ mysql> INSERT INTO Movies VALUES (1, 'Howard the Duck', 110, 'Sci-Fi', 4.6, 'PG'
     -> (6, 'Monsters Inc.', 92, 'Animation',8.1,'G');
 Query OK, 6 rows affected (0.01 sec)
 
-***
+```
 +----+--------------------+---------+-------------+------------+--------+
 | ID | Title              | Runtime | Genre       | IMDB_Score | Rating |
 +----+--------------------+---------+-------------+------------+--------+
@@ -49,7 +49,7 @@ Query OK, 6 rows affected (0.01 sec)
 |  5 | Spaceballs         |      96 | Comedy      |        7.1 | PG     |
 |  6 | Monsters Inc.      |      92 | Animation   |        8.1 | G      |
 +----+--------------------+---------+-------------+------------+--------+
-***
+```
 
 // adding two movies of our own
  INSERT INTO Movies VALUES(NUll,'Fast furious', 120, 'Action',9.5, 'PG-13');
@@ -59,7 +59,7 @@ mysql>INSERT Int
 Query OK, 1 row affected (0.01 sec)
 
 mysql> select * from Movies
-***
+```
     -> ;
 +----+--------------------+---------+-------------+------------+--------+
 | ID | Title              | Runtime | Genre       | IMDB_Score | Rating |
@@ -73,22 +73,22 @@ mysql> select * from Movies
 |  7 | Fast furious       |     120 | Action      |        9.5 | PG-13  |
 |  8 | Cars               |     130 | Action      |        9.5 | PG     |
 +----+--------------------+---------+-------------+------------+--------+
-***
+```
 
 //Sci-FI
 mysql>  select * from Movies WHERE Genre LIKE 'SCI__%';
-***
+```
 +--------------------+---------+--------+------------+--------+
 | Title              | Runtime | Genre  | IMDB_Score | Rating |
 +--------------------+---------+--------+------------+--------+
 | Howard the Duck    |     110 | Sci-FI |       4.60 | PG     |
 | Startship Troopers |     129 | Sci-FI |       7.20 | PG-13  |
 +--------------------+---------+--------+------------+--------+
-***
+```
 
 //at least 6.5
 mysql> select * from Movies Where IMDB_Score >= 6.5;
-***
+```
 
 +----+--------------------+---------+-------------+------------+--------+
 | ID | Title              | Runtime | Genre       | IMDB_Score | Rating |
@@ -100,6 +100,6 @@ mysql> select * from Movies Where IMDB_Score >= 6.5;
 |  7 | Fast furious       |     120 | Action      |        9.5 | PG-13  |
 |  8 | Cars               |     130 | Action      |        9.5 | PG     |
 +----+--------------------+---------+-------------+------------+--------+
-***
+```
 
 //
