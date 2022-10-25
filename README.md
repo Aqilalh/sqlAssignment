@@ -16,7 +16,7 @@ mysql> create table Movies (
     //Table before
     mysql> describe Movies
     -> ;
-    ```
+    
 +------------+--------------+------+-----+---------+----------------+
 | Field      | Type         | Null | Key | Default | Extra          |
 +------------+--------------+------+-----+---------+----------------+
