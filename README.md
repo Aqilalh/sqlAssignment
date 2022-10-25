@@ -48,7 +48,7 @@ Query OK, 6 rows affected (0.01 sec)
 |  5 | Spaceballs         |      96 | Comedy      |        7.1 | PG     |
 |  6 | Monsters Inc.      |      92 | Animation   |        8.1 | G      |
 +----+--------------------+---------+-------------+------------+--------+
-```
+
 
 // adding two movies of our own
  INSERT INTO Movies VALUES(NUll,'Fast furious', 120, 'Action',9.5, 'PG-13');
