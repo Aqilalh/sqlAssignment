@@ -99,6 +99,89 @@ mysql> select * from Movies Where IMDB_Score >= 6.5;
 |  7 | Fast furious       |     120 | Action      |        9.5 | PG-13  |
 |  8 | Cars               |     130 | Action      |        9.5 | PG     |
 +----+--------------------+---------+-------------+------------+--------+
+
+
+// pg or P
+mysql> select * from Movies Where Runtime < 100 AND (Rating = 'PG' OR Rating = 'G');
++----+---------------+---------+-----------+------------+--------+
+| ID | Title         | Runtime | Genre     | IMDB_Score | Rating |
++----+---------------+---------+-----------+------------+--------+
+|  5 | Spaceballs    |      96 | Comedy    |        7.1 | PG     |
+|  6 | Monsters Inc. |      92 | Animation |        8.1 | G      |
++----+---------------+---------+-----------+------------+--------+
+
+// 
+mysql> select Genre from Movies Where IMDB_SCORE < 7.5;
++--------+
+| Genre  |
++--------+
+| Sci-Fi |
+| Horror |
+| Sci-Fi |
+| Comedy |
++--------+
+
+// updating data
+mysql> UPDATE Movies
+    -> SET Rating = 'R'
+    -> WHERE Title = 'Startship Troopers';
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Movies;
++----+--------------------+---------+-------------+------------+--------+
+| ID | Title              | Runtime | Genre       | IMDB_Score | Rating |
++----+--------------------+---------+-------------+------------+--------+
+|  1 | Howard the Duck    |     110 | Sci-Fi      |        4.6 | PG     |
+|  2 | Lavalantula        |      83 | Horror      |        4.7 | TV-14  |
+|  3 | Startship Troopers |     129 | Sci-Fi      |        7.2 | R      |
+|  4 | Waltz With Bashir  |      90 | Documentary |        8.0 | R      |
+|  5 | Spaceballs         |      96 | Comedy      |        7.1 | PG     |
+|  6 | Monsters Inc.      |      92 | Animation   |        8.1 | G      |
+|  7 | Fast furious       |     120 | Action      |        9.5 | PG-13  |
+|  8 | Cars               |     130 | Action      |        9.5 | PG     |
++----+--------------------+---------+-------------+------------+--------+
+
+// ID And Rating
+mysql> select ID, Rating  from Movies WHERE Genre = 'Horror' OR Genre = 'Documentary' ;
++----+--------+
+| ID | Rating |
++----+--------+
+|  2 | TV-14  |
+|  4 | R      |
++----+--------+
+
+
+//Min
+mysql> SELECT MIN(IMDB_Score) AS SnallestRating
+    -> FROM Movies;
++----------------+
+| SnallestRating |
++----------------+
+|            4.6 |
++----------------+
+1 row in set (0.01 sec)
+
+//Max
+mysql> SELECT MAX(IMDB_Score) AS LargestPrice
+    -> FROM Movies;
++--------------+
+| LargestPrice |
++--------------+
+|          9.5 |
++--------------+
+1 row in set (0.00 sec)
+
+// Average
+mysql> SELECT AVG(IMDB_Score) AS averageRating
+    -> FROM Movies;
++---------------+
+| averageRating |
++---------------+
+|       7.33750 |
++---------------+
+1 row in set (0.01 sec)
+
 ```
 
 
