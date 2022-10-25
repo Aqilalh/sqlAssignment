@@ -182,6 +182,55 @@ mysql> SELECT AVG(IMDB_Score) AS averageRating
 +---------------+
 1 row in set (0.01 sec)
 
+//show ratings with multiple movies showing
+
+mysql> select MAX(IMDB_Score),MIN(IMDB_Score),AVG(IMDB_Score) from movies group by Rating HAVING COUNT(*) > 1;
++-----------------+-----------------+-----------------+
+| MAX(IMDB_Score) | MIN(IMDB_Score) | AVG(IMDB_Score) |
++-----------------+-----------------+-----------------+
+|             9.5 |             4.6 |         7.06667 |
+|             8.0 |             7.2 |         7.60000 |
++-----------------+-----------------+-----------------+
+
+//Delete R rating
+mysql> DELETE FROM Movies WHERE Rating = 'R';
+Query OK, 2 rows affected (0.09 sec)
+
+mysql> select * from Movies;
++----+-----------------+---------+-----------+------------+--------+
+| ID | Title           | Runtime | Genre     | IMDB_Score | Rating |
++----+-----------------+---------+-----------+------------+--------+
+|  1 | Howard the Duck |     110 | Sci-Fi    |        4.6 | PG     |
+|  2 | Lavalantula     |      83 | Horror    |        4.7 | TV-14  |
+|  5 | Spaceballs      |      96 | Comedy    |        7.1 | PG     |
+|  6 | Monsters Inc.   |      92 | Animation |        8.1 | G      |
+|  7 | Fast furious    |     120 | Action    |        9.5 | PG-13  |
+|  8 | Cars            |     130 | Action    |        9.5 | PG     |
++----+-----------------+---------+-----------+------------+--------+
+
+// Delete table
+mysql> DROP TABLE Movies;
+Query OK, 0 rows affected (0.17 sec)
+
+// Delete the dataBase
+mysql> DROP DATABASE assignment;
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| c12db              |
+| homework12         |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
+| yearflix           |
++--------------------+
+
 ```
 
 
